@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<h2>{{page.title}}</h2>
+<p class="post-meta valign-wrapper"><i class="material-icons black-text">today</i><span class="valign">{{ page.date | date: "%B %-d, %Y"  }}</span></p><br>
+{{ content }}
+<br><h5 class="valign-wrapper"><i class="material-icons valign black-text">label</i>Tags</h5>
+{% for atag in page.tags %}
+	<a class="chip" href="/tags#{{ atag | downcase }}">{{ atag }}</a></h5>
+{% endfor %} 

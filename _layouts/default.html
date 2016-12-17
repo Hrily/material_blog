@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}</title>
+
+	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<link  rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" type="text/css" href="/src/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="/src/css/style.css">
+	<script type="text/javascript" src="/src/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="/src/js/materialize.min.js"></script>
+
+</head>
+<body>
+
+	<!-- SideNav -->
+	<ul id="slide-out" class="side-nav left-align">
+		<li>
+			<div class="userView">
+				<div class="background">
+					<img src="/images/nav_bg.png">
+				</div>
+				<a href="https://hrily.github.io/Resume">
+					<img class="circle" src="/images/hrishi_dp.jpg"></a>
+					<span class="white-text name">Hrishi Hiraskar</span></a>
+					<a href="mailto:hrishihirakar@gmail.com"><span class="white-text email">hrishihiraskar@gmail.com</span>
+				</a>
+			</div>
+		</li>
+		<li><a class="waves-effect waves-light" href="/">Home</a></li>
+		<li><a class="subheader">Other Links</a></li>
+		<li><a class="waves-effect waves-light" href="https://hrily.github.io">Personal Website</a></li>
+		<li><a class="waves-effect waves-light" href="personalizations.html">Personalizations</a></li>
+		<li><a class="waves-effect waves-light" href="https://hrily.github.io/Resume">Resume</a></li>
+		<li><a class="waves-effect waves-light" href="https://www.facebook.com/hrilyscreens">HriyScreens</a></li>
+	</ul>
+
+	<!-- Nav Links -->
+	<a href="#!" id="menu-btn" data-activates="slide-out" class="button-collapse">
+		<i class="material-icons">menu</i>
+	</a>
+
+	<!-- Header -->
+	<div id="header" class="mcontainer white-text">
+		<div class="row">
+			<div class="col s6">
+				<a class="white-text" href="/">
+					<h3>Hrily's Blog</h3>
+					<h5 style="opacity: 0.8;">#BeHrilyReal</h5>
+				</a>
+			</div>
+			<ul class="col right">
+				<li class="col"><a href="https://www.facebook.com/hrishi.hiraskar7"><img src="/images/logo_fb_white.png"/></a></li>
+				<li class="col"><a href="https://github.com/Hrily"><img src="/images/logo_github_white.png"/></a></li>
+				<li class="col"><a href="https://www.linkedin.com/hrishi.hiraskar"><img src="/images/logo_linkedin_white.png"/></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="panel"></div>
+	<img class="logo" src="/images/codecrazy.png">
+
+	<div class="mcontainer">
+		<div class="card">
+			<div class="card-content">
+				{{ content }}
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="page-footer">
+		<div class="mcontainer">
+			<div class="row">
+				<div class="col s12 m6 l6">
+					<h5 class="white-text">About</h5>
+					<p class="grey-text text-lighten-4" style="padding-right: 20px;">
+						I'm Hrishi Hiraskar and I'm Web and App developer. I like to contribute to open source and I also do Graphic design. I also like Scripting and Competitive Programming. I also have my interest in Machine Learning. I also like to customize. And I Love Material Design.<br>
+						I'm currently studying B.Tech. in Computer Engineering at National Institute of Technology Karnataka, Surathkal.
+					</p>
+					<h5 class="white-text">Contact</h5>
+					<p class="grey-text text-lighten-4">
+						Hrishi Hiraskar<br>
+						NITK Surathkal<br>
+						<span><i class="material-icons valign">mail</i><a class="white-text" href="mailto:hrishihiraskar@gmail.com"> &nbsp;hrishihiraskar@gmail.com</a></span>
+					</p>
+					<ul class="social">
+						<li class="col"><a href="https://www.facebook.com/hrishi.hiraskar7"><img src="/images/logo_fb_white.png"/></a></li>
+						<li class="col"><a href="https://github.com/Hrily"><img src="/images/logo_github_white.png"/></a></li>
+						<li class="col"><a href="https://www.linkedin.com/hrishi.hiraskar"><img src="/images/logo_linkedin_white.png"/></a></li>
+					</ul>
+				</div>
+				<div class="col s12 m3 l3">
+					<h5 class="white-text">Navigation</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="/">Home</a></li>
+						<li><a class="grey-text text-lighten-3" href="#">Top</a></li>
+					</ul>
+				</div>
+				<div class="col s12 m3 l3">
+					<h5 class="white-text">Other Links</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="https://hrily.github.io">Personal Website</a></li>
+						<li><a class="grey-text text-lighten-3" href="personalizations.html">Personalizations</a></li>
+						<li><a class="grey-text text-lighten-3" href="https://hrily.github.io/Resume">Resume</a></li>
+						<li><a class="grey-text text-lighten-3" href="https://www.facbook.com/hrilyscreens">HrilyScreens</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="mcontainer">
+				© 2016 Hrishi Hiraskar
+			</div>
+		</div>
+	</footer>
+
+	<script type="text/javascript">
+		$('.button-collapse').sideNav({closeOnClick: true, draggable: true});
+		$('.tooltipped').tooltip({delay: 50});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+---
+layout: default
+title: Home
+---
+
+<h2>Posts</h2>
+
+<ul class="post-list"> 
+{% for post in site.posts %}
+	<li>
+		<a class="white-text" href="{{ post.url }}">
+			<div class="card waves-effect waves-light pink white-text">
+				<div class="card-content">
+					<span class="post-meta">{{ post.date | date: "%B %-d, %Y"  }}</span>
+					<h5>{{ post.title }}</h5>
+					<p class="post-desc">{{ post.description }}</p>
+				</div>
+			</div>
+		</a>
+	</li>
+{% endfor %}
+</ul>
