@@ -2,7 +2,7 @@
 layout: post
 title: "Material Ripple Transition"
 description: "Material Ripple Transition using CSS and JS"
-tags: ["html", "css", "js", "material design"]
+tags: ["HTML", "CSS", "JS", "Material Design"]
 ---
 
 Hie,

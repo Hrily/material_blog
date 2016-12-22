@@ -8,7 +8,7 @@ title: Tags
   {% assign t = tag | first %}
   {% assign posts = tag | last %}
 <ul class="tag-post-list" id="{{ t | downcase }}">
-<a class="tag pink-text" href="#{{ t | downcase }}"><b>{{ t | downcase }}</b></a>
+<a class="tag pink-text" href="#{{ t | downcase }}"><b>{{ t }}</b></a>
 {% for post in posts %}
   {% if post.tags contains t %}
   <li>

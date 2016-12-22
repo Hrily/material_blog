@@ -2,7 +2,7 @@
 layout: post
 title: "Jekyll is awesome!"
 description: "My first blog post, dedicated to Jekyll."
-tags: ["jekyll"]
+tags: ["Jekyll"]
 ---
 
 Hie,
