@@ -18,7 +18,7 @@ The *Theory* covers following topics:
 + [What to expect from the Tutorial?](#end_result)
 + [The Math](#math)
 
-<a name="ar">
+<a name="ar"/>
 ###What is Augmented Reality?
 
 *Augmented Reality (AR)* is a technology that superimposes a computer-generated image on a user's view of the real world. Don't confuse Augmented Reality with Virtual Reality (VR), the two are different. Virtual Reality is completely virtual whereas Augmented Reality is virtual items imposed in real world. A good example of Augmented Reality could be the Pokemon Go Game.
@@ -27,7 +27,7 @@ The *Theory* covers following topics:
 <p class="image"><img src="{{ site.baseurl }}/images/ar/pokemon_go.jpg"/></p>
 
 <br>
-<a name="end_result">
+<a name="end_result"/>
 ###What to expect from the Tutorial?
 
 At the end of the Tutorial you would be able to implement an Augmented Reality based Android app. The end result will look something like this:
@@ -36,7 +36,7 @@ At the end of the Tutorial you would be able to implement an Augmented Reality b
 <p class="image"><img src="{{ site.baseurl }}/images/ar/end_result.jpg"/></p>
 
 <br>
-<a name="math">
+<a name="math"/>
 ###The Math
 
 Let's do the Math. I know this could be a little boring, but believe me, understanding this will help you in easy time while implementation of not only this app but any Augmented Reality app. You may even understand the logic behind the Pokemon Go app if you relate this to it.
@@ -50,9 +50,7 @@ Now, we need to make some relation between these two points. So, we introduce a 
 
 Let's keep the device location at origin and the North at 0&deg;. Let's call the angle made by the POI at device location as Azitmuth angle(&phi;). Wait, what's Azimuth angle?
 
-```
-The Azimuth is the angle formed between a reference direction (North) and a line from the observer to a point of interest
-```
+> The Azimuth is the angle formed between a reference direction (North) and a line from the observer to a point of interest
 
 The device itself will form some angle with the North. Let the angle formed by the plane of device and the North be the Device angle(&theta;). But the device Camera shows a range(sector) of plane. Generally the sector covered by the Camera is 50&deg; to 60&deg;. Let's assume it to be 50&deg;. So, the sector covered by Camera in our plane will be 25&deg; either side of the Device angle(&theta;) i.e. &theta; &plusmn; 25;.
 
