@@ -19,7 +19,7 @@ The *Theory* covers following topics:
 + [The Math](#math)
 
 <a name="ar"/>
-### What is Augmented Reality?
+<h2>What is Augmented Reality?</h2>
 
 *Augmented Reality (AR)* is a technology that superimposes a computer-generated image on a user's view of the real world. Don't confuse Augmented Reality with Virtual Reality (VR), the two are different. Virtual Reality is completely virtual whereas Augmented Reality is virtual items imposed in real world. A good example of Augmented Reality could be the Pokemon Go Game.
 
@@ -28,7 +28,7 @@ The *Theory* covers following topics:
 
 <br>
 <a name="end_result"/>
-### What to expect from the Tutorial?
+<h2>What to expect from the Tutorial?</h2>
 
 At the end of the Tutorial you would be able to implement an Augmented Reality based Android app. The end result will look something like this:
 
@@ -37,7 +37,7 @@ At the end of the Tutorial you would be able to implement an Augmented Reality b
 
 <br>
 <a name="math"/>
-### The Math
+<h2>The Math</h2>
 
 Let's do the Math. I know this could be a little boring, but believe me, understanding this will help you in easy time while implementation of not only this app but any Augmented Reality app. You may even understand the logic behind the Pokemon Go app if you relate this to it.
 
@@ -55,13 +55,10 @@ Let's keep the device location at origin and the North at 0&deg;. Let's call the
 The device itself will form some angle with the North. Let the angle formed by the plane of device and the North be the Device angle(&theta;). But the device Camera shows a range(sector) of plane. Generally the sector covered by the Camera is 50&deg; to 60&deg;. Let's assume it to be 50&deg;. So, the sector covered by Camera in our plane will be 25&deg; either side of the Device angle(&theta;) i.e. &theta; &plusmn; 25;.
 
 But there's something missing. The view of Camera is perpendicular to the plane of device. So, we need to subtract 90&deg; from &theta; to get actual sector. So the sector now becomes (&theta-90) &plusmn; 25.
-<br>
-<p class="image"><img src="{{ site.baseurl }}/images/ar/camera_sector.jpg"/></p>
 
-<br>
 Now, all we need to do is to check if the POI lies in the sector created by Camera's view. To do this we check if the Azimuth angle(&phi;) lies between the range of sector i.e. (&theta-90) &plusmn; 25.
 <br>
-<p class="image"><img src="{{ site.baseurl }}/images/ar/camera_sector.jpg"/></p>
+<p class="image"><img src="{{ site.baseurl }}/images/ar/azimuth.jpg"/></p>
 
 <br>
 That's all. We got to know how we are gonna proceed. The next part is Implementation. Stay tuned for the next part of the Tutorial.
