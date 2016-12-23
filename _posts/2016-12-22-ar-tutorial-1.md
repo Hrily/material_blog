@@ -20,7 +20,8 @@ The *Theory* covers following topics:
 + [The Math](#math)
 
 <a name="ar"/>
-<h2>What is Augmented Reality?</h2>
+
+###What is Augmented Reality?
 
 _Augmented Reality (AR)_ is a technology that superimposes a computer-generated image on a user's view of the real world. Don't confuse Augmented Reality with Virtual Reality (VR), the two are different. Virtual Reality is completely virtual whereas Augmented Reality is virtual items imposed in real world. A good example of Augmented Reality could be the Pokemon Go Game.
 
@@ -29,7 +30,8 @@ _Augmented Reality (AR)_ is a technology that superimposes a computer-generated 
 
 <br>
 <a name="end_result"/>
-<h2>What to expect from the Tutorial?</h2>
+
+###What to expect from the Tutorial?
 
 At the end of the Tutorial you would be able to implement an Augmented Reality based Android app. The end result will look something like this:
 
@@ -38,7 +40,8 @@ At the end of the Tutorial you would be able to implement an Augmented Reality b
 
 <br>
 <a name="math"/>
-<h2>The Math</h2>
+
+###The Math
 
 Let's do the Math. I know this could be a little boring, but believe me, understanding this will help you in easy time while implementation of not only this app but any Augmented Reality app. You may even understand the logic behind the Pokemon Go app if you relate this to it.
 
