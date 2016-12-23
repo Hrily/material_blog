@@ -14,6 +14,7 @@ Implementing the Augmented Reality was the toughest part, had to search a lot an
 Since, the whole tutorial is kinda big, I divided it in two parts, viz. *Theory* and *Implementation*. This part will deal with the underlying principles and the next one will deal with the actual code.
 
 The *Theory* covers following topics:
+
 + [What is Augmented Reality?](#ar)
 + [What to expect from the Tutorial?](#end_result)
 + [The Math](#math)
