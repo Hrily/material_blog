@@ -11,9 +11,9 @@ We had Microsoft code.fun.do Hackathon in our third semester and I, along with m
 
 Implementing the Augmented Reality was the toughest part, had to search a lot and apply some of my own techniques to implement it. So, I'm writing this tutorial for the ones who want to implement Augmented Reality in an Android app as well as for my own future reference.
 
-Since, the whole tutorial is kinda big, I divided it in two parts, viz. *Theory* and *Implementation*. This part will deal with the underlying principles and the next one will deal with the actual code.
+Since, the whole tutorial is kinda big, I divided it in two parts, viz. **Theory** and **Implementation**. This part will deal with the underlying principles and the next one will deal with the actual code.
 
-The *Theory* covers following topics:
+The **Theory** covers following topics:
 
 + [What is Augmented Reality?](#ar)
 + [What to expect from the Tutorial?](#end_result)
@@ -23,7 +23,7 @@ The *Theory* covers following topics:
 
 ### What is Augmented Reality?
 
-_Augmented Reality (AR)_ is a technology that superimposes a computer-generated image on a user's view of the real world. Don't confuse Augmented Reality with Virtual Reality (VR), the two are different. Virtual Reality is completely virtual whereas Augmented Reality is virtual items imposed in real world. A good example of Augmented Reality could be the Pokemon Go Game.
+**Augmented Reality (AR)** is a technology that superimposes a computer-generated image on a user's view of the real world. Don't confuse Augmented Reality with Virtual Reality (VR), the two are different. Virtual Reality is completely virtual whereas Augmented Reality is virtual items imposed in real world. A good example of Augmented Reality could be the Pokemon Go Game.
 
 <br>
 <p class="image"><img src="{{ site.baseurl }}/images/ar/pokemon_go.jpg"/></p>
@@ -50,11 +50,20 @@ So, in the app, we need to show a point whenever the divice camera points to it.
 <p class="image"><img src="{{ site.baseurl }}/images/ar/birds_eye_view.jpg"/></p>
 
 <br>
-Now, we need to make some relation between these two points. So, we introduce a third point. So, where is this third point? - Where the Starks Rule - _The NORTH_.
+Now, we need to make some relation between these two points. So, we introduce a third point. So, where is this third point? - Where the Starks Rule - **The NORTH** (Coz, The North Remembers ;p).
 
 Let's keep the device location at origin and the North at 0&deg;. Let's call the angle made by the POI at device location as Azitmuth angle(&phi;). Wait, what's Azimuth angle?
 
 > The Azimuth is the angle formed between a reference direction (North) and a line from the observer to a point of interest
+
+But how are we goind to calculate azimuth? The answer is simple trigonometry. Let `dx` be the difference in x-coordinates of the device and POI and let `dy` be the difference in y-coordinate. Then 
+<br>
+<p class="image"><img src="{{ site.baseurl }}/images/ar/tanphi.jpg"/></p>
+
+<br>
+```
+tan(&phi;) = dy/dx   =>   &phi; = tan<sup>-1</sup>(dy/dx)
+```
 
 The device itself will form some angle with the North. Let the angle formed by the plane of device and the North be the Device angle(&theta;). But the device Camera shows a range(sector) of plane. Generally the sector covered by the Camera is 50&deg; to 60&deg;. Let's assume it to be 50&deg;. So, the sector covered by Camera in our plane will be 25&deg; either side of the Device angle(&theta;) i.e. &theta; &plusmn; 25.
 
