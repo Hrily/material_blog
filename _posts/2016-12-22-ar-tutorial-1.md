@@ -61,10 +61,8 @@ But how are we goind to calculate azimuth? The answer is simple trigonometry. Le
 <p class="image"><img src="{{ site.baseurl }}/images/ar/tanphi.jpg"/></p>
 
 <br>
-```
-tan(&phi;) = dy/dx
-&phi; = tan<sup>-1</sup>(dy/dx)
-```
+> tan(&phi;) = dy/dx
+> &phi; = tan<sup>-1</sup>(dy/dx)
 
 The device itself will form some angle with the North. Let the angle formed by the plane of device and the North be the Device angle(&theta;). But the device Camera shows a range(sector) of plane. Generally the sector covered by the Camera is 50&deg; to 60&deg;. Let's assume it to be 50&deg;. So, the sector covered by Camera in our plane will be 25&deg; either side of the Device angle(&theta;) i.e. &theta; &plusmn; 25.
 
