@@ -46,6 +46,7 @@ At the end of the Tutorial you would be able to implement an Augmented Reality b
 Let's do the Math. I know this could be a little boring, but believe me, understanding this will help you in easy time while implementation of not only this app but any Augmented Reality app. You may even understand the logic behind the Pokemon Go app if you relate this to it.
 
 So, in the app, we need to show a point whenever the divice camera points to it. Let's see this with bird's eye view. We have two points on plane, the device and the point to show(let's call it Point of Interest or POI).
+
 <br>
 <p class="image"><img src="{{ site.baseurl }}/images/ar/birds_eye_view.jpg"/></p>
 
@@ -57,6 +58,7 @@ Let's keep the device location at origin and the North at 0&deg;. Let's call the
 > The Azimuth is the angle formed between a reference direction (North) and a line from the observer to a point of interest
 
 But how are we goind to calculate azimuth? The answer is simple trigonometry. Let `dx` be the difference in x-coordinates of the device and POI and let `dy` be the difference in y-coordinate. Then 
+
 <br>
 <p class="image"><img src="{{ site.baseurl }}/images/ar/tanphi.jpg"/></p>
 
@@ -72,6 +74,7 @@ The device itself will form some angle with the North. Let the angle formed by t
 But there's something missing. The view of Camera is perpendicular to the plane of device. So, we need to subtract 90&deg; from &theta; to get actual sector. So the sector now becomes (&theta;-90) &plusmn; 25.
 
 Now, all we need to do is to check if the POI lies in the sector created by Camera's view. To do this we check if the Azimuth angle(&phi;) lies between the range of sector i.e. (&theta;-90) &plusmn; 25.
+
 <br>
 <p class="image"><img src="{{ site.baseurl }}/images/ar/azimuth.jpg"/></p>
 
