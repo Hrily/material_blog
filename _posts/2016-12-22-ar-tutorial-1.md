@@ -63,6 +63,7 @@ But how are we goind to calculate azimuth? The answer is simple trigonometry. Le
 <br>
 	
 > tan(&phi;) = dy/dx
+
 > &phi; = tan<sup>-1</sup>(dy/dx)
 
 <br>
