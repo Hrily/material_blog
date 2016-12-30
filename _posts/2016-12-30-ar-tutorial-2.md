@@ -50,7 +50,7 @@ Now open `MainActivity.java` in your Android Studio editor, this is where we wil
 
 The methods in bold are the ones which are needed to be completed. The others are helper methods which are already complete. Offcourse, there are others methods too, which are responsible for setting up of Camera View. If you want to learn about it, head to the Android Developers site [here](https://developer.android.com/guide/topics/media/camera.html).
 
-<a name="setAugmentedRealityPoint"/>
+<a name="setaugmentedrealitypoint"/>
 
 ## setAugmentedRealityPoint
 
@@ -95,3 +95,30 @@ public double calculateTheoreticalAzimuth() {
 	return phiAngle;
 }
 ```
+
+<a name="calculateazimuthaccuracy"/>
+
+## calculateAzimuthAccuracy
+
+This function calculates the Camera View Sector of Device. It return minAngle and maxAngle of Camera View Sector.
+
+<a name="isbetween"/>
+
+## isBetween
+
+This function checks if POI lies between the Camera View Sector. To do this, we just check if the azimuth angle is between the minAngle and maxAngle of the Camera View Sector. But this isn't enough, sometimes, minAngle is greater than maxAngle. In that case we just check if azimuth lies in 0 and maxAngle OR minAngle and 360.
+
+Following code illustrates above procedure:
+
+```java
+ private boolean isBetween(double minAngle, double maxAngle, double azimuth) {
+	// Checks if the azimuth angle lies in minAngle and maxAngle of Camera View Sector
+	if (minAngle > maxAngle) {
+		if (isBetween(0, maxAngle, azimuth) || isBetween(minAngle, 360, azimuth))
+			return true;
+	} else if (azimuth > minAngle && azimuth < maxAngle)
+		return true;
+	return false;
+}
+```
+
