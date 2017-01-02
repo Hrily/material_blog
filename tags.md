@@ -11,9 +11,9 @@ title: Tags
 <a class="tag pink-text" href="#{{ t | downcase }}"><b>{{ t }}</b></a>
 {% for post in posts %}
   {% if post.tags contains t %}
-  <li>
-    <span class="post-meta">{{ post.date | date: "%B %-d, %Y"  }}</span>
-    <a href="{{ site.baseurl }}{{ post.url }}"><h5>{{ post.title }}</h5></a>
+  <li class="row">
+    <span class= "col s12 m8 l8"><a href="{{ site.baseurl }}{{ post.url }}"><h5>{{ post.title }}</h5></a></span>
+    <span class="post-meta col s12 m4 l4">{{ post.date | date: "%B %-d, %Y"  }}</span>
   </li>
   {% endif %}
 {% endfor %}

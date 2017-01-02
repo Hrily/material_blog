@@ -92,10 +92,10 @@ body {
 }
 
 .post-list li .post-meta, .tag-post-list li .post-meta{
-	position: absolute;
 	opacity: 0.8;
 	font-size: 12px;
-	right: 15px;
+	margin: 0.82rem 0 0.656rem 0;
+	text-align: right;
 }
 
 .post-list .post-desc {
@@ -123,8 +123,13 @@ body {
 	padding: 0 !important;
 }
 
+.tag-post-list .row {
+	margin: 0;
+}
+
 .tag-post-list {
 	margin-top: 30px !important	;
+	padding-left: 5px !important;
 }
 
 .card pre, .card code {
@@ -137,6 +142,12 @@ body {
 
 .card-content ul {
 	margin: 0;
+	padding-left: 5%;
+}
+
+.card-content li {
+	padding: 2px;
+	list-style-type: circle !important;
 }
 
 .card-content .image {
@@ -174,6 +185,15 @@ body {
 	.page-footer p {
 		padding: 10px;
 		padding-right: 10px;
+	}
+
+	.tag-post-list li .post-meta{
+		text-align: left;
+		margin: 0;
+	}
+
+	.tag-post-list li h5 {
+		margin-bottom: 
 	}
 
 }
