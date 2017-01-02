@@ -30,6 +30,7 @@ I've priovided a starter pack for this Tutorial to give you a kickstart. Downloa
 	</button>
 </a>
 
+<br>
 -OR-
 
 Clone it
@@ -52,7 +53,7 @@ The methods in bold are the ones which are needed to be completed. The others ar
 
 <a name="setaugmentedrealitypoint"/>
 
-## setAugmentedRealityPoint
+### setAugmentedRealityPoint
 
 This function will set the POI.
 
@@ -98,15 +99,15 @@ public double calculateTheoreticalAzimuth() {
 
 <a name="calculateazimuthaccuracy"/>
 
-## calculateAzimuthAccuracy
+### calculateAzimuthAccuracy
 
 This function calculates the Camera View Sector of Device. It return minAngle and maxAngle of Camera View Sector.
 
 <a name="isbetween"/>
 
-## isBetween
+### isBetween
 
-This function checks if POI lies between the Camera View Sector. To do this, we just check if the azimuth angle is between the minAngle and maxAngle of the Camera View Sector. But this isn't enough, sometimes, minAngle is greater than maxAngle. In that case we just check if azimuth lies in 0 and maxAngle OR minAngle and 360.
+This function checks if POI lies between the Camera View Sector. To do this, we just check if the azimuth angle is between the minAngle and maxAngle of the Camera View Sector. But this isn't enough. Sometimes, minAngle is greater than maxAngle. In that case we just check if azimuth lies in 0 and maxAngle OR minAngle and 360.
 
 Following code illustrates above procedure:
 
@@ -122,3 +123,61 @@ Following code illustrates above procedure:
 }
 ```
 
+<a name="updatedescription"/>
+
+### updateDescription
+
+This function just updates the values shown in textbox. It is for testing function.
+
+<a name="onlocationchanged"/>
+
+### onLocationChanged
+
+This function takes care of the change in location of Device. It updates the location and recalculates the azimuth angle of POI.
+
+<a name="onazimuthchanged"/>
+
+### onAzimuthChanged
+
+This function takes care of the change in azimuth angle of the device. This is the method where the real thing happens, i.e. to augment the POI. Here, we have the Device's azimuth angle and the azimuth angle of the POI. First, we add 90&deg; to azimuth angle of Device (Remember...), then we calculate the Camera View Sector. Then we check if POI lies in the Camera View Sector, if yes then we show pointer icon on the screen. In order to give the augmented feel, we place the pointer icon on screen proportional to where the POI is in the sector. This is done by calculating the ratio of difference of azimuth angle and minimum angle of sector to that of difference of minimum and maximum angle of sector. Then the top margin of pointer icon is set to product of ratio and screen height.
+
+```java
+public void onAzimuthChanged(float azimuthChangedFrom, float azimuthChangedTo) {
+	// Function to handle Change in azimuth angle
+	mAzimuthReal = azimuthChangedTo;
+	mAzimuthTheoretical = calculateTheoreticalAzimuth();
+
+	// Since Camera View is perpendicular to device plane
+	mAzimuthReal = (mAzimuthReal+90)%360;
+
+	pointerIcon = (ImageView) findViewById(R.id.icon);
+
+	double minAngle = calculateAzimuthAccuracy(mAzimuthReal).get(0);
+	double maxAngle = calculateAzimuthAccuracy(mAzimuthReal).get(1);
+
+	if (isBetween(minAngle, maxAngle, mAzimuthTheoretical)) {
+		float ratio = ((float) (mAzimuthTheoretical - minAngle + 360.0) % 360) / ((float) (maxAngle - minAngle + 360.0) % 360);
+		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+		lp.topMargin = (int) (display.getHeight() * ratio);
+		lp.leftMargin = display.getWidth()/2 - pointerIcon.getWidth();
+		pointerIcon.setLayoutParams(lp);
+		pointerIcon.setVisibility(View.VISIBLE);
+	} else {
+		pointerIcon.setVisibility(View.GONE);
+	}
+
+	updateDescription();
+}
+```
+
+That's it. Now you can build the app, deploy and test it on your device. In case you need the completed project, you can get it below.
+
+<br>
+<a href="https://github.com/Hrily/ARTutorial_Starter/archive/master.zip">
+	<button class="btn pink waves-effect waves-light" name="action">Download Starter Pack
+		<i class="material-icons right">file_download</i>
+	</button>
+</a>
+
+<br>
+**Note:** If the app says "Using Game Rotation Vector. Direction may not be accurate!", then your device doesn't have compass i.e. the device can't locate North. The angle available in this case is not relative to North but somewhere else. More information [here](https://source.android.com/devices/sensors/sensor-types.html#game_rotation_vector).

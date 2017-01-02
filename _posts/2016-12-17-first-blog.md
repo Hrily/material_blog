@@ -13,6 +13,7 @@ One of my friend suggested me about Jekyll when I told him about my plan to crea
 
 <br>
 For those who are wondering how I created the blog, following are the links for reference :
+
 + [Jekyll Docs](https://jekyllrb.com/docs/home/)
 + [Tutorial by Hongikiat](http://www.hongkiat.com/blog/blog-with-jekyll/)
 + [Ready to Make Jekyll Blog](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/)
