@@ -36,45 +36,45 @@ If you look closely, the animation starts by circle popping at the point of touc
 
 We will simulate the same. First we will define a container, with some bounds. Lets call it `expandable-container`.
 
-```html
+{% highlight html %}
 <div class="expandable-container"></div>
-```
+{% endhighlight %}
 
 Let's define CSS for the `expandable-container`
 
-```css
+{% highlight css %}
 .expandable-container {
 	position: relative;
 	width: 400px;
 	height: 200px;
 	border-radius: 1px;
 }
-```
+{% endhighlight %}
 
 I have kept the `position: relative` which I'll expain later.
 
 <br>
 Now, lets define the CSS for the circle which will pop out. We'll call it `expandable`
 
-```css
+{% highlight css %}
 .expandable {
 	display: inline-block;
-	position: relative;
+	position: absolute;
 	vertical-align: middle;
 	width: 50px;
 	height: 50px;
 	border-radius: 50px;
 	-webkit-transition: transform .4s ease-in-out;
-         -o-transition: transform .4s ease-in-out;
-            transition: transform .4s ease-in-out;
-    background-color: #fff;
+	     -o-transition: transform .4s ease-in-out;
+	        transition: transform .4s ease-in-out;
+	background-color: #fff;
 }
-```
+{% endhighlight %}
 
 <br>
 Now, using JS, we'll dynamically add a circle and expand it. Lets define a JS method to do this.
 
-```javascript
+{% highlight javascript %}
 function expand_handler(event){
 	expandable_container = (document.getElementsByClassName('expandable-container'))[0];
 	expandable_container.body.innerHTML += '<div class="expandable"></div>';
@@ -93,7 +93,7 @@ function expand_handler(event){
 		expandable.style.zIndex = -1;
 	}, 500);
 };
-```
+{% endhighlight %}
 
 Let us understand what's happening. 
 
@@ -136,7 +136,7 @@ There is some post-processing done after the animation is complete, like changin
 
 So, how to close the container. Pretty easy, just follow the steps for opening in reverse order. Following code snippet illustrates it:
 
-```javascript
+{% highlight javascript %}
 function close(){
 	expandable_container = (document.getElementsByClassName('expandable-container'))[0];
 	expandable = (expandable_container.getElementsByClassName('expandable'))[0];
@@ -148,7 +148,7 @@ function close(){
 		expandable_container.removeChild(expandable_container);
 	}, 500);
 };
-```
+{% endhighlight %}
 
 <br>
 That's it, we're done here!

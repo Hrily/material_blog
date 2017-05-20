@@ -35,9 +35,9 @@ I've priovided a starter pack for this Tutorial to give you a kickstart. Downloa
 
 Clone it
 
-```shell
+{% highlight shell %}
 git clone https://github.com/Hrily/ARTutorial_Starter.git
-```
+{% endhighlight %}
 
 Now open `MainActivity.java` in your Android Studio editor, this is where we will be coding. It has following methods:
 
@@ -69,7 +69,7 @@ So we will first calculate `dx` and `dy`, then _tan(&phi;)_, and then by applyin
 
 Following code demonstrates it:
 
-```java
+{% highlight java %}
 public double calculateTheoreticalAzimuth() {
 	// Calculates azimuth angle (phi) of POI
 	double dX = mPoi.getPoiLatitude() - mMyLatitude;
@@ -95,7 +95,7 @@ public double calculateTheoreticalAzimuth() {
 
 	return phiAngle;
 }
-```
+{% endhighlight %}
 
 <a name="calculateazimuthaccuracy"/>
 
@@ -111,7 +111,7 @@ This function checks if POI lies between the Camera View Sector. To do this, we 
 
 Following code illustrates above procedure:
 
-```java
+{% highlight java %}
  private boolean isBetween(double minAngle, double maxAngle, double azimuth) {
 	// Checks if the azimuth angle lies in minAngle and maxAngle of Camera View Sector
 	if (minAngle > maxAngle) {
@@ -121,7 +121,7 @@ Following code illustrates above procedure:
 		return true;
 	return false;
 }
-```
+{% endhighlight %}
 
 <a name="updatedescription"/>
 
@@ -141,7 +141,7 @@ This function takes care of the change in location of Device. It updates the loc
 
 This function takes care of the change in azimuth angle of the device. This is the method where the real thing happens, i.e. to augment the POI. Here, we have the Device's azimuth angle and the azimuth angle of the POI. First, we add 90&deg; to azimuth angle of Device (Remember...), then we calculate the Camera View Sector. Then we check if POI lies in the Camera View Sector, if yes then we show pointer icon on the screen. In order to give the augmented feel, we place the pointer icon on screen proportional to where the POI is in the sector. This is done by calculating the ratio of difference of azimuth angle and minimum angle of sector to that of difference of minimum and maximum angle of sector. Then the top margin of pointer icon is set to product of ratio and screen height.
 
-```java
+{% highlight java %}
 public void onAzimuthChanged(float azimuthChangedFrom, float azimuthChangedTo) {
 	// Function to handle Change in azimuth angle
 	mAzimuthReal = azimuthChangedTo;
@@ -156,8 +156,11 @@ public void onAzimuthChanged(float azimuthChangedFrom, float azimuthChangedTo) {
 	double maxAngle = calculateAzimuthAccuracy(mAzimuthReal).get(1);
 
 	if (isBetween(minAngle, maxAngle, mAzimuthTheoretical)) {
-		float ratio = ((float) (mAzimuthTheoretical - minAngle + 360.0) % 360) / ((float) (maxAngle - minAngle + 360.0) % 360);
-		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+		float ratio = ((float) (mAzimuthTheoretical - minAngle + 360.0) % 360)
+				/ ((float) (maxAngle - minAngle + 360.0) % 360);
+		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+				ViewGroup.LayoutParams.WRAP_CONTENT, 
+				ViewGroup.LayoutParams.WRAP_CONTENT);
 		lp.topMargin = (int) (display.getHeight() * ratio);
 		lp.leftMargin = display.getWidth()/2 - pointerIcon.getWidth();
 		pointerIcon.setLayoutParams(lp);
@@ -168,7 +171,7 @@ public void onAzimuthChanged(float azimuthChangedFrom, float azimuthChangedTo) {
 
 	updateDescription();
 }
-```
+{% endhighlight %}
 
 That's it. Now you can build the app, deploy and test it on your device. In case you need the completed project, you can get it below.
 
