@@ -140,6 +140,10 @@ body {
 	padding: 8px;
 }
 
+.card figure {
+	margin: 0;
+}
+
 .card-content ul {
 	margin: 0;
 	padding-left: 5%;
