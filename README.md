@@ -1,5 +1,5 @@
-# blog
+# material_blog
 
-Hrily's Blog
+Hrily's Blog with Material Theme
 
-Live [https://hrily.githib.io/blog]
+Live [https://hrily.githib.io/material_blog]
